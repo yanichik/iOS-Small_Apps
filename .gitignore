@@ -12,9 +12,6 @@ build/
 *xcuserdata/
 *.xcuserstate
 
-# Ignore Xcode project file
-*.xcodeproj
-
 # Ignore Xcode workspace file
 *.xcworkspace
 
