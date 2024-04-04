@@ -9,11 +9,11 @@ import UIKit
 
 // class A4DViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 class A4DViewController: UIViewController {
-    
     var collectionView: UICollectionView!
     enum Section {
         case main
     }
+
     var dataSource: UICollectionViewDiffableDataSource<Section, A4DAnimation>!
     var animations: [A4DAnimation]!
     
@@ -105,18 +105,22 @@ class A4DViewController: UIViewController {
     
     func configureDataSource() {
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: {
-            (collectionView, indexPath, itemIdentifier) -> UICollectionViewCell? in
+            collectionView, indexPath, _ -> UICollectionViewCell? in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AnimationCell", for: indexPath) as! A4DCollectionViewCell
             
             let animation = self.animations[indexPath.row]
             
-            let button = A4DAnimationButton(type: .system, cell: cell, animation: animation, tag: indexPath.row)
-            button.addTarget(self, action: #selector(self.animateButton(_:)), for: .touchUpInside)
+            var button: A4DAnimationButton!
+            if let existingButton = cell.contentView.subviews.first(where: { $0 is A4DAnimationButton }) as? A4DAnimationButton {
+                button = existingButton
+            } else {
+                button = A4DAnimationButton(type: .system, cell: cell, animation: animation, tag: indexPath.row)
+                button.addTarget(self, action: #selector(self.animateButton(_:)), for: .touchUpInside)
+            }
             
             cell.contentView.addSubview(button)
             
             return cell
         })
     }
-
 }
