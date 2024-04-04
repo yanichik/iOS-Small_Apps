@@ -53,26 +53,6 @@ class A4DViewController: UIViewController {
         updateData()
     }
 
-    @objc func buttonPressed(_ sender: UIButton, _ type: CATransitionType, _ subtype: CATransitionSubtype) {
-        guard let titleText = sender.titleLabel?.text else { return }
-        print("\(titleText) Pressed")
-        
-        let cell = collectionView.cellForItem(at: IndexPath(row: sender.tag, section: 0))
-        
-        let animation = CATransition()
-        animation.startProgress = 0.0
-        animation.endProgress = 1.0
-        animation.duration = 1.0
-        animation.type = type
-        animation.subtype = subtype
-        cell?.contentView.layer.add(animation, forKey: nil)
-        cell?.contentView.backgroundColor = UIColor.blue.withAlphaComponent(0.2)
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            cell?.contentView.backgroundColor = .systemPink
-        }
-    }
-    
     func configureCollectionView() {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createTwoColumnFlowLayout())
         view.addSubview(collectionView)
@@ -122,5 +102,25 @@ class A4DViewController: UIViewController {
             
             return cell
         })
+    }
+    
+    @objc func buttonPressed(_ sender: UIButton, _ type: CATransitionType, _ subtype: CATransitionSubtype) {
+        guard let titleText = sender.titleLabel?.text else { return }
+        print("\(titleText) Pressed")
+        
+        let cell = collectionView.cellForItem(at: IndexPath(row: sender.tag, section: 0))
+        
+        let animation = CATransition()
+        animation.startProgress = 0.0
+        animation.endProgress = 1.0
+        animation.duration = 1.0
+        animation.type = type
+        animation.subtype = subtype
+        cell?.contentView.layer.add(animation, forKey: nil)
+        cell?.contentView.backgroundColor = UIColor.blue.withAlphaComponent(0.2)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            cell?.contentView.backgroundColor = .systemPink
+        }
     }
 }

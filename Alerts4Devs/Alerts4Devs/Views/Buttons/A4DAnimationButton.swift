@@ -12,9 +12,10 @@ class A4DAnimationButton: UIButton {
     init(type: UIButton.ButtonType, cell: UICollectionViewCell, animation: A4DAnimation, tag: IndexPath.Element) {
         super.init(frame: cell.contentView.bounds) // Ensure button fills cell's content view
         translatesAutoresizingMaskIntoConstraints = false
-        
+
         self.animation = animation
         self.tag = tag // Contains row of IndexPath to pass on the animation associated with this
+
         setTitle(animation.title, for: .normal)
         autoresizingMask = [.flexibleWidth, .flexibleHeight] // Allow button to resize with cell
         titleLabel?.backgroundColor = .clear // Set label background color to clear

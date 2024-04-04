@@ -11,7 +11,7 @@ struct A4DAnimation: Hashable {
     var title: String
     var type: CATransitionType
     var subtype: CATransitionSubtype
-    
+
     init(title: String, type: CATransitionType, subtype: CATransitionSubtype) {
         self.title = title
         self.type = type
