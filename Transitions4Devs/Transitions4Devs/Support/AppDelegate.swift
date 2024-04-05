@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Alerts4Devs
+//  Transitions4Devs
 //
 //  Created by Yan on 4/1/24.
 //

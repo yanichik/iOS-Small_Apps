@@ -7,25 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		540EFEEE2BBF1616001DB27E /* A4DAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540EFEED2BBF1616001DB27E /* A4DAnimation.swift */; };
-		540EFEF52BBF17D3001DB27E /* A4DAnimationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540EFEF42BBF17D3001DB27E /* A4DAnimationButton.swift */; };
-		540EFEF72BBF28FB001DB27E /* A4DCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540EFEF62BBF28FB001DB27E /* A4DCollectionViewCell.swift */; };
+		540EFEEE2BBF1616001DB27E /* T4DAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540EFEED2BBF1616001DB27E /* T4DAnimation.swift */; };
+		540EFEF52BBF17D3001DB27E /* T4DAnimationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540EFEF42BBF17D3001DB27E /* T4DAnimationButton.swift */; };
+		540EFEF72BBF28FB001DB27E /* T4DCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540EFEF62BBF28FB001DB27E /* T4DCollectionViewCell.swift */; };
 		547A82712BBB5B7500725A77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547A82702BBB5B7500725A77 /* AppDelegate.swift */; };
 		547A82732BBB5B7500725A77 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547A82722BBB5B7500725A77 /* SceneDelegate.swift */; };
-		547A82752BBB5B7500725A77 /* A4DViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547A82742BBB5B7500725A77 /* A4DViewController.swift */; };
+		547A82752BBB5B7500725A77 /* T4DViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547A82742BBB5B7500725A77 /* T4DViewController.swift */; };
 		547A82782BBB5B7500725A77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 547A82762BBB5B7500725A77 /* Main.storyboard */; };
 		547A827A2BBB5B7600725A77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547A82792BBB5B7600725A77 /* Assets.xcassets */; };
 		547A827D2BBB5B7600725A77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 547A827B2BBB5B7600725A77 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		540EFEED2BBF1616001DB27E /* A4DAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A4DAnimation.swift; sourceTree = "<group>"; };
-		540EFEF42BBF17D3001DB27E /* A4DAnimationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A4DAnimationButton.swift; sourceTree = "<group>"; };
-		540EFEF62BBF28FB001DB27E /* A4DCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A4DCollectionViewCell.swift; sourceTree = "<group>"; };
-		547A826D2BBB5B7500725A77 /* Alerts4Devs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alerts4Devs.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		540EFEED2BBF1616001DB27E /* T4DAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T4DAnimation.swift; sourceTree = "<group>"; };
+		540EFEF42BBF17D3001DB27E /* T4DAnimationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T4DAnimationButton.swift; sourceTree = "<group>"; };
+		540EFEF62BBF28FB001DB27E /* T4DCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T4DCollectionViewCell.swift; sourceTree = "<group>"; };
+		547A826D2BBB5B7500725A77 /* Transitions4Devs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Transitions4Devs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		547A82702BBB5B7500725A77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		547A82722BBB5B7500725A77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		547A82742BBB5B7500725A77 /* A4DViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A4DViewController.swift; sourceTree = "<group>"; };
+		547A82742BBB5B7500725A77 /* T4DViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T4DViewController.swift; sourceTree = "<group>"; };
 		547A82772BBB5B7500725A77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		547A82792BBB5B7600725A77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		547A827C2BBB5B7600725A77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 		540EFEEF2BBF1629001DB27E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				540EFEED2BBF1616001DB27E /* A4DAnimation.swift */,
+				540EFEED2BBF1616001DB27E /* T4DAnimation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -54,7 +54,7 @@
 		540EFEF02BBF1634001DB27E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				547A82742BBB5B7500725A77 /* A4DViewController.swift */,
+				547A82742BBB5B7500725A77 /* T4DViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -71,7 +71,7 @@
 		540EFEF22BBF179B001DB27E /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				540EFEF62BBF28FB001DB27E /* A4DCollectionViewCell.swift */,
+				540EFEF62BBF28FB001DB27E /* T4DCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -79,7 +79,7 @@
 		540EFEF32BBF17A2001DB27E /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				540EFEF42BBF17D3001DB27E /* A4DAnimationButton.swift */,
+				540EFEF42BBF17D3001DB27E /* T4DAnimationButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -87,7 +87,7 @@
 		547A82642BBB5B7500725A77 = {
 			isa = PBXGroup;
 			children = (
-				547A826F2BBB5B7500725A77 /* Alerts4Devs */,
+				547A826F2BBB5B7500725A77 /* Transitions4Devs */,
 				547A826E2BBB5B7500725A77 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -95,12 +95,12 @@
 		547A826E2BBB5B7500725A77 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				547A826D2BBB5B7500725A77 /* Alerts4Devs.app */,
+				547A826D2BBB5B7500725A77 /* Transitions4Devs.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		547A826F2BBB5B7500725A77 /* Alerts4Devs */ = {
+		547A826F2BBB5B7500725A77 /* Transitions4Devs */ = {
 			isa = PBXGroup;
 			children = (
 				540EFEF12BBF178E001DB27E /* Views */,
@@ -109,7 +109,7 @@
 				54D5CBCA2BBF42F8005DA998 /* Support */,
 				547A827E2BBB5B7600725A77 /* Info.plist */,
 			);
-			path = Alerts4Devs;
+			path = Transitions4Devs;
 			sourceTree = "<group>";
 		};
 		54D5CBCA2BBF42F8005DA998 /* Support */ = {
@@ -127,9 +127,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		547A826C2BBB5B7500725A77 /* Alerts4Devs */ = {
+		547A826C2BBB5B7500725A77 /* Transitions4Devs */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 547A82812BBB5B7600725A77 /* Build configuration list for PBXNativeTarget "Alerts4Devs" */;
+			buildConfigurationList = 547A82812BBB5B7600725A77 /* Build configuration list for PBXNativeTarget "Transitions4Devs" */;
 			buildPhases = (
 				547A82692BBB5B7500725A77 /* Sources */,
 				547A826A2BBB5B7500725A77 /* Frameworks */,
@@ -139,9 +139,9 @@
 			);
 			dependencies = (
 			);
-			name = Alerts4Devs;
+			name = Transitions4Devs;
 			productName = Alerts4Devs;
-			productReference = 547A826D2BBB5B7500725A77 /* Alerts4Devs.app */;
+			productReference = 547A826D2BBB5B7500725A77 /* Transitions4Devs.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -159,7 +159,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 547A82682BBB5B7500725A77 /* Build configuration list for PBXProject "Alerts4Devs" */;
+			buildConfigurationList = 547A82682BBB5B7500725A77 /* Build configuration list for PBXProject "Transitions4Devs" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -172,7 +172,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				547A826C2BBB5B7500725A77 /* Alerts4Devs */,
+				547A826C2BBB5B7500725A77 /* Transitions4Devs */,
 			);
 		};
 /* End PBXProject section */
@@ -195,12 +195,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				547A82752BBB5B7500725A77 /* A4DViewController.swift in Sources */,
+				547A82752BBB5B7500725A77 /* T4DViewController.swift in Sources */,
 				547A82712BBB5B7500725A77 /* AppDelegate.swift in Sources */,
-				540EFEF72BBF28FB001DB27E /* A4DCollectionViewCell.swift in Sources */,
-				540EFEEE2BBF1616001DB27E /* A4DAnimation.swift in Sources */,
+				540EFEF72BBF28FB001DB27E /* T4DCollectionViewCell.swift in Sources */,
+				540EFEEE2BBF1616001DB27E /* T4DAnimation.swift in Sources */,
 				547A82732BBB5B7500725A77 /* SceneDelegate.swift in Sources */,
-				540EFEF52BBF17D3001DB27E /* A4DAnimationButton.swift in Sources */,
+				540EFEF52BBF17D3001DB27E /* T4DAnimationButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +266,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				"GCC_OPTIMIZATION_LEVEL[sdk=iphonesimulator*]" = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -283,6 +284,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				"SWIFT_OPTIMIZATION_LEVEL[sdk=iphonesimulator*]" = "-Onone";
 			};
 			name = Debug;
 		};
@@ -349,7 +351,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7X75FNL228;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Alerts4Devs/Info.plist;
+				INFOPLIST_FILE = Transitions4Devs/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -359,7 +361,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = yanbrunshteyn.Alerts4Devs;
+				PRODUCT_BUNDLE_IDENTIFIER = yanbrunshteyn.Transitions4Devs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -376,7 +378,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7X75FNL228;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Alerts4Devs/Info.plist;
+				INFOPLIST_FILE = Transitions4Devs/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -386,7 +388,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = yanbrunshteyn.Alerts4Devs;
+				PRODUCT_BUNDLE_IDENTIFIER = yanbrunshteyn.Transitions4Devs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -397,7 +399,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		547A82682BBB5B7500725A77 /* Build configuration list for PBXProject "Alerts4Devs" */ = {
+		547A82682BBB5B7500725A77 /* Build configuration list for PBXProject "Transitions4Devs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				547A827F2BBB5B7600725A77 /* Debug */,
@@ -406,7 +408,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		547A82812BBB5B7600725A77 /* Build configuration list for PBXNativeTarget "Alerts4Devs" */ = {
+		547A82812BBB5B7600725A77 /* Build configuration list for PBXNativeTarget "Transitions4Devs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				547A82822BBB5B7600725A77 /* Debug */,

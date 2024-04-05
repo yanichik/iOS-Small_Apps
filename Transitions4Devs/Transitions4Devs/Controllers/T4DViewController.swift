@@ -1,6 +1,6 @@
 //
-//  A4DViewController.swift
-//  Alerts4Devs
+//  T4DViewController.swift
+//  Transitions4Devs
 //
 //  Created by Yan on 4/1/24.
 //
@@ -8,16 +8,16 @@
 import UIKit
 
 // class A4DViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-class A4DViewController: UIViewController {
+class T4DViewController: UIViewController {
     var collectionView: UICollectionView!
     enum Section {
         case main
     }
 
-    var dataSource: UICollectionViewDiffableDataSource<Section, A4DAnimation>!
-    var animations: [A4DAnimation]!
+    var dataSource: UICollectionViewDiffableDataSource<Section, T4DAnimation>!
+    var animations: [T4DAnimation]!
     
-    @IBAction func animateButton(_ sender: A4DAnimationButton) {
+    @IBAction func animateButton(_ sender: T4DAnimationButton) {
         guard let animation = sender.animation else { return }
         buttonPressed(sender, animation.type, animation.subtype)
     }
@@ -30,25 +30,25 @@ class A4DViewController: UIViewController {
     }
 
     func configureAnimations() {
-        let fadeFromTop = A4DAnimation(title: "fadeFromTop", type: .fade, subtype: .fromTop)
-        let fadeFromBottom = A4DAnimation(title: "fadeFromBottom", type: .fade, subtype: .fromBottom)
-        let fadeFromLeft = A4DAnimation(title: "fadeFromLeft", type: .fade, subtype: .fromLeft)
-        let fadeFromRight = A4DAnimation(title: "fadeFromRight", type: .fade, subtype: .fromRight)
-        let moveInFromTop = A4DAnimation(title: "moveInFromTop", type: .moveIn, subtype: .fromTop)
-        let moveInFromBottom = A4DAnimation(title: "moveInFromBottom", type: .moveIn, subtype: .fromBottom)
-        let moveInFromLeft = A4DAnimation(title: "moveInFromLeft", type: .moveIn, subtype: .fromLeft)
-        let moveInFromRight = A4DAnimation(title: "moveInFromRight", type: .moveIn, subtype: .fromRight)
-        let pushFromTop = A4DAnimation(title: "pushFromTop", type: .push, subtype: .fromTop)
-        let pushFromBottom = A4DAnimation(title: "pushFromBottom", type: .push, subtype: .fromBottom)
-        let pushFromLeft = A4DAnimation(title: "pushFromLeft", type: .push, subtype: .fromLeft)
-        let pushFromRight = A4DAnimation(title: "pushFromRight", type: .push, subtype: .fromRight)
-        let revealFromTop = A4DAnimation(title: "revealFromTop", type: .reveal, subtype: .fromTop)
-        let revealFromBottom = A4DAnimation(title: "revealFromBottom", type: .reveal, subtype: .fromBottom)
-        let revealFromLeft = A4DAnimation(title: "revealFromLeft", type: .reveal, subtype: .fromLeft)
-        let revealFromRight = A4DAnimation(title: "revealFromRight", type: .reveal, subtype: .fromRight)
+        let fadeFromTop = T4DAnimation(title: "fadeFromTop", type: .fade, subtype: .fromTop)
+        let fadeFromBottom = T4DAnimation(title: "fadeFromBottom", type: .fade, subtype: .fromBottom)
+        let fadeFromLeft = T4DAnimation(title: "fadeFromLeft", type: .fade, subtype: .fromLeft)
+        let fadeFromRight = T4DAnimation(title: "fadeFromRight", type: .fade, subtype: .fromRight)
+        let moveInFromTop = T4DAnimation(title: "moveInFromTop", type: .moveIn, subtype: .fromTop)
+        let moveInFromBottom = T4DAnimation(title: "moveInFromBottom", type: .moveIn, subtype: .fromBottom)
+        let moveInFromLeft = T4DAnimation(title: "moveInFromLeft", type: .moveIn, subtype: .fromLeft)
+        let moveInFromRight = T4DAnimation(title: "moveInFromRight", type: .moveIn, subtype: .fromRight)
+        let pushFromTop = T4DAnimation(title: "pushFromTop", type: .push, subtype: .fromTop)
+        let pushFromBottom = T4DAnimation(title: "pushFromBottom", type: .push, subtype: .fromBottom)
+        let pushFromLeft = T4DAnimation(title: "pushFromLeft", type: .push, subtype: .fromLeft)
+        let pushFromRight = T4DAnimation(title: "pushFromRight", type: .push, subtype: .fromRight)
+        let revealFromTop = T4DAnimation(title: "revealFromTop", type: .reveal, subtype: .fromTop)
+        let revealFromBottom = T4DAnimation(title: "revealFromBottom", type: .reveal, subtype: .fromBottom)
+        let revealFromLeft = T4DAnimation(title: "revealFromLeft", type: .reveal, subtype: .fromLeft)
+        let revealFromRight = T4DAnimation(title: "revealFromRight", type: .reveal, subtype: .fromRight)
 
         animations = [
-            fadeFromTop, fadeFromBottom, fadeFromLeft, fadeFromRight, moveInFromTop, moveInFromBottom, moveInFromLeft, moveInFromRight, pushFromTop, pushFromBottom, pushFromLeft, pushFromRight, revealFromTop, revealFromBottom, revealFromLeft, revealFromRight
+            moveInFromTop, moveInFromBottom, moveInFromLeft, moveInFromRight, pushFromTop, pushFromBottom, pushFromLeft, pushFromRight, revealFromTop, revealFromBottom, revealFromLeft, revealFromRight, fadeFromTop, fadeFromBottom, fadeFromLeft, fadeFromRight
         ]
         updateData()
     }
@@ -57,7 +57,7 @@ class A4DViewController: UIViewController {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createTwoColumnFlowLayout())
         view.addSubview(collectionView)
         collectionView.backgroundColor = .systemBackground
-        collectionView.register(A4DCollectionViewCell.self, forCellWithReuseIdentifier: "AnimationCell")
+        collectionView.register(T4DCollectionViewCell.self, forCellWithReuseIdentifier: "AnimationCell")
     }
     
     func createTwoColumnFlowLayout() -> UICollectionViewFlowLayout {
@@ -75,7 +75,7 @@ class A4DViewController: UIViewController {
     }
     
     func updateData() {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, A4DAnimation>()
+        var snapshot = NSDiffableDataSourceSnapshot<Section, T4DAnimation>()
         snapshot.appendSections([.main])
         snapshot.appendItems(animations)
         DispatchQueue.main.async {
@@ -86,17 +86,14 @@ class A4DViewController: UIViewController {
     func configureDataSource() {
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: {
             collectionView, indexPath, _ -> UICollectionViewCell? in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AnimationCell", for: indexPath) as! A4DCollectionViewCell
-            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AnimationCell", for: indexPath) as! T4DCollectionViewCell
+            cell.contentView.subviews.forEach { subView in
+                subView.removeFromSuperview()
+            }
             let animation = self.animations[indexPath.row]
             
-            var button: A4DAnimationButton!
-            if let existingButton = cell.contentView.subviews.first(where: { $0 is A4DAnimationButton }) as? A4DAnimationButton {
-                button = existingButton
-            } else {
-                button = A4DAnimationButton(type: .system, cell: cell, animation: animation, tag: indexPath.row)
-                button.addTarget(self, action: #selector(self.animateButton(_:)), for: .touchUpInside)
-            }
+            let button = T4DAnimationButton(type: .system, cell: cell, animation: animation, tag: indexPath.row)
+            button.addTarget(self, action: #selector(self.animateButton(_:)), for: .touchUpInside)
             
             cell.contentView.addSubview(button)
             

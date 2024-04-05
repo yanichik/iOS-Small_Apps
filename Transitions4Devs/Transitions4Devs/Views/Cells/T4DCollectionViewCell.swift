@@ -1,13 +1,13 @@
 //
-//  A4DCollectionViewCell.swift
-//  Alerts4Devs
+//  T4DCollectionViewCell.swift
+//  Transitions4Devs
 //
 //  Created by Yan on 4/4/24.
 //
 
 import UIKit
 
-class A4DCollectionViewCell: UICollectionViewCell {
+class T4DCollectionViewCell: UICollectionViewCell {
     static let reuseID = "AnimationCell"
     override init(frame: CGRect) {
         super.init(frame: frame)

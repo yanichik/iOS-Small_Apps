@@ -1,15 +1,15 @@
 //
-//  A4DAnimationButton.swift
-//  Alerts4Devs
+//  T4DAnimationButton.swift
+//  Transitions4Devs
 //
 //  Created by Yan on 4/4/24.
 //
 
 import UIKit
 
-class A4DAnimationButton: UIButton {
-    var animation: A4DAnimation!
-    init(type: UIButton.ButtonType, cell: UICollectionViewCell, animation: A4DAnimation, tag: IndexPath.Element) {
+class T4DAnimationButton: UIButton {
+    var animation: T4DAnimation!
+    init(type: UIButton.ButtonType, cell: UICollectionViewCell, animation: T4DAnimation, tag: IndexPath.Element) {
         super.init(frame: cell.contentView.bounds) // Ensure button fills cell's content view
         translatesAutoresizingMaskIntoConstraints = false
 
