@@ -30,3 +30,9 @@ WorldTrotter_Solutions*
 # Ignore Playground
 MyPlayground.playground
 
+# Ignore AppStore Upload files for Transitions4Devs
+Transitions4Devs/AppStore
+
+# Ignore mp4 files
+*.mp4
+
