@@ -7,13 +7,12 @@
 
 import UIKit
 
-// class A4DViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 class T4DViewController: UIViewController {
     var collectionView: UICollectionView!
     enum Section {
         case main
     }
-
+    
     var dataSource: UICollectionViewDiffableDataSource<Section, T4DAnimation>!
     var animations: [T4DAnimation]!
     
@@ -21,14 +20,15 @@ class T4DViewController: UIViewController {
         guard let animation = sender.animation else { return }
         buttonPressed(sender, animation.type, animation.subtype)
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Transitions"
         configureAnimations()
         configureCollectionView()
         configureDataSource()
     }
-
+    
     func configureAnimations() {
         let fadeFromTop = T4DAnimation(title: "fadeFromTop", type: .fade, subtype: .fromTop)
         let fadeFromBottom = T4DAnimation(title: "fadeFromBottom", type: .fade, subtype: .fromBottom)
@@ -46,18 +46,42 @@ class T4DViewController: UIViewController {
         let revealFromBottom = T4DAnimation(title: "revealFromBottom", type: .reveal, subtype: .fromBottom)
         let revealFromLeft = T4DAnimation(title: "revealFromLeft", type: .reveal, subtype: .fromLeft)
         let revealFromRight = T4DAnimation(title: "revealFromRight", type: .reveal, subtype: .fromRight)
-
+        
         animations = [
             moveInFromTop, moveInFromBottom, moveInFromLeft, moveInFromRight, pushFromTop, pushFromBottom, pushFromLeft, pushFromRight, revealFromTop, revealFromBottom, revealFromLeft, revealFromRight, fadeFromTop, fadeFromBottom, fadeFromLeft, fadeFromRight
         ]
         updateData()
     }
-
+    
     func configureCollectionView() {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(scrollView)
+        NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+        
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createTwoColumnFlowLayout())
-        view.addSubview(collectionView)
+        scrollView.addSubview(collectionView)
         collectionView.backgroundColor = .systemBackground
         collectionView.register(T4DCollectionViewCell.self, forCellWithReuseIdentifier: "AnimationCell")
+        
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            collectionView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
+        ])
+        
+//        NSLayoutConstraint.activate([
+//            info.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor),
+//            info.centerYAnchor.constraint(equalTo: collectionView.centerYAnchor, constant: 10)
+//        ])
+        
     }
     
     func createTwoColumnFlowLayout() -> UICollectionViewFlowLayout {
@@ -95,12 +119,23 @@ class T4DViewController: UIViewController {
             let button = T4DAnimationButton(type: .system, cell: cell, animation: animation, tag: indexPath.row)
             button.addTarget(self, action: #selector(self.animateButton(_:)), for: .touchUpInside)
             
+            guard let infoView = cell.infoView else { return UICollectionViewCell()}
+            infoView.isUserInteractionEnabled = true
+            
+            let tapInfoGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapInfo))
+            tapInfoGesture.cancelsTouchesInView = true
+            
             cell.contentView.addSubview(button)
+            cell.contentView.addSubview(infoView)
             
             return cell
         })
     }
     
+    @objc func tapInfo(_ sender: UITapGestureRecognizer) {
+        print("tapped info")
+    }
+        
     @objc func buttonPressed(_ sender: UIButton, _ type: CATransitionType, _ subtype: CATransitionSubtype) {
         guard let titleText = sender.titleLabel?.text else { return }
         print("\(titleText) Pressed")
@@ -115,7 +150,7 @@ class T4DViewController: UIViewController {
         animation.subtype = subtype
         cell?.contentView.layer.add(animation, forKey: nil)
         cell?.contentView.backgroundColor = UIColor.blue.withAlphaComponent(0.2)
-
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             cell?.contentView.backgroundColor = .systemPink
         }

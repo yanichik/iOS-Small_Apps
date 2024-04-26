@@ -8,6 +8,9 @@
 import UIKit
 
 class T4DCollectionViewCell: UICollectionViewCell {
+    @IBOutlet var animateBtn: UIButton!
+    @IBOutlet var infoView: UIImageView!
+    
     static let reuseID = "AnimationCell"
     override init(frame: CGRect) {
         super.init(frame: frame)
