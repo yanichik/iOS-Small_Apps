@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
     
@@ -32,7 +33,11 @@ class ViewController: UIViewController {
     func fetchPeople () {
         // fetch data from Core Data
         do {
-            self.items = try managedObjContext.fetch(Person.fetchRequest())
+            let fetchRequest = Person.fetchRequest() as NSFetchRequest<Person>
+            let predicate = NSPredicate(format: "name == 'Ted' OR name == 'John' or name CONTAINS 'Sam'")
+            fetchRequest.predicate = predicate
+            self.items = try managedObjContext.fetch(fetchRequest)
+            
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
