@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -30,19 +31,33 @@
                                     <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sP9-R0-CTl">
-                                            <rect key="frame" x="0.0" y="0.0" width="82" height="66.666666666666671"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="sP9-R0-CTl">
+                                            <rect key="frame" x="0.0" y="35" width="128" height="93"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="info.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="MsC-aL-8tL">
                                             <rect key="frame" x="108.66666666666669" y="109.33333333333334" width="19.333333333333314" height="17.333333333333343"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
+                                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="G9C-5y-zEZ">
+                                            <rect key="frame" x="-2" y="0.0" width="132" height="31"/>
+                                        </slider>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="sP9-R0-CTl" secondAttribute="bottom" id="2VO-0L-YpE"/>
+                                        <constraint firstItem="sP9-R0-CTl" firstAttribute="top" secondItem="G9C-5y-zEZ" secondAttribute="bottom" constant="5" id="Cxm-OS-6BC"/>
+                                        <constraint firstItem="G9C-5y-zEZ" firstAttribute="top" secondItem="deq-V7-VRX" secondAttribute="top" id="Ijk-PC-oey"/>
+                                        <constraint firstItem="sP9-R0-CTl" firstAttribute="leading" secondItem="deq-V7-VRX" secondAttribute="leading" id="KkJ-qS-QyW"/>
+                                        <constraint firstItem="G9C-5y-zEZ" firstAttribute="centerX" secondItem="deq-V7-VRX" secondAttribute="centerX" id="XkP-yV-E2e"/>
+                                        <constraint firstAttribute="trailing" secondItem="sP9-R0-CTl" secondAttribute="trailing" id="dht-Ym-JnN"/>
+                                        <constraint firstAttribute="trailing" secondItem="G9C-5y-zEZ" secondAttribute="trailing" id="flL-OU-uaZ"/>
+                                        <constraint firstItem="G9C-5y-zEZ" firstAttribute="leading" secondItem="deq-V7-VRX" secondAttribute="leading" id="mnL-pT-KWJ"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
                                 <connections>
                                     <outlet property="animationImageView" destination="sP9-R0-CTl" id="saB-HV-U3S"/>
                                     <outlet property="infoImageView" destination="MsC-aL-8tL" id="tUz-8O-XSg"/>
+                                    <outlet property="slider" destination="G9C-5y-zEZ" id="SFN-k1-oi2"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -74,6 +89,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZiE-Ye-7gG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1354.9618320610687" y="-32.394366197183103"/>
+        </scene>
+        <!--InformationVC-->
+        <scene sceneID="cW8-fS-aCc">
+            <objects>
+                <viewController storyboardIdentifier="InformationVC" id="Siv-ke-NUM" customClass="T4DInformationVC" customModule="Transitions4Devs2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="16M-S6-uAR">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="8cz-XW-SgQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="stt-u5-6wt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3208" y="-32"/>
         </scene>
     </scenes>
     <resources>

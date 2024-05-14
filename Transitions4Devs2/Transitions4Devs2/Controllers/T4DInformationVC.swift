@@ -11,7 +11,7 @@ class T4DInformationVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("info VC shown")
         // Do any additional setup after loading the view.
     }
     

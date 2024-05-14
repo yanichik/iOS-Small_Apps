@@ -10,6 +10,7 @@ import UIKit
 class T4DViewCell: UICollectionViewCell {
     @IBOutlet weak var infoImageView: UIImageView!
     @IBOutlet weak var animationImageView: UIImageView!
+    @IBOutlet weak var slider: UISlider!
     
     var tapAction: (() -> Void)?
     var animaionName: String?
@@ -23,7 +24,7 @@ class T4DViewCell: UICollectionViewCell {
         layer.cornerRadius = 20
         contentView.layer.cornerRadius = 20
     }
-
+    
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -49,6 +50,10 @@ class T4DViewCell: UICollectionViewCell {
     
     @objc func infoTapped(){
         print("\(infoImageView.debugDescription) tapped")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let infoVC = storyboard.instantiateViewController(identifier: "InformationVC") as! T4DInformationVC
+        ((superclass as! T4DCollectionVC).superclass as! UINavigationController).pushViewController(infoVC, animated: true)
+        
     }
 }
 
@@ -64,10 +69,12 @@ extension T4DViewCell {
         animation.type = type
         animation.subtype = subtype
         self.contentView.layer.add(animation, forKey: nil)
-        self.contentView.backgroundColor = UIColor.blue.withAlphaComponent(0.2)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            self.contentView.backgroundColor = .systemPink
+        UIView.animate(withDuration: 1.0) {
+            self.contentView.backgroundColor = UIColor.blue.withAlphaComponent(CGFloat(self.slider.value))
+        } completion: { _ in
+            UIView.animate(withDuration: 1.0) {
+                self.contentView.backgroundColor = .systemBackground
+            }
         }
     }
 }
