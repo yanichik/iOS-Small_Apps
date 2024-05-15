@@ -34,8 +34,8 @@ class ViewController: UIViewController {
         // fetch data from Core Data
         do {
             let fetchRequest = Person.fetchRequest() as NSFetchRequest<Person>
-            let predicate = NSPredicate(format: "name == 'Ted' OR name == 'John' or name CONTAINS 'Sam'")
-            fetchRequest.predicate = predicate
+            fetchRequest.predicate = addFilterByContainsText(entityToFilter: "name", filterBytext: "Ted")
+//            fetchRequest.sortDescriptors = [addAlphabeticalSort()]
             self.items = try managedObjContext.fetch(fetchRequest)
             
             DispatchQueue.main.async {
@@ -44,6 +44,14 @@ class ViewController: UIViewController {
         } catch {
             print(error)
         }
+    }
+    
+    func addAlphabeticalSort() -> NSSortDescriptor {
+        return NSSortDescriptor(key: "name", ascending: false)
+    }
+    
+    func addFilterByContainsText(entityToFilter: String, filterBytext: String) -> NSPredicate {
+        return  NSPredicate(format: "%K CONTAINS %@", entityToFilter, filterBytext)
     }
     
     @IBAction func addTapped (_ sender: Any) {
