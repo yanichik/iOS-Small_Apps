@@ -30,6 +30,31 @@ class ViewController: UIViewController {
         
     }
     
+    func relationshipDemo() {
+        // Create family
+        let greenFamily = Family(context: managedObjContext)
+        greenFamily.name = "Green"
+        
+        // Create person
+        let john = Person(context: managedObjContext)
+        john.name = "John"
+        john.family = greenFamily
+        
+        // Create another
+        let sammy = Person(context: managedObjContext)
+        sammy.name = "Sammy"
+        
+        // Add person to family
+        greenFamily.addToPeople(sammy)
+        
+        // Save context
+        do {
+            try managedObjContext.save()
+        } catch {
+            print(error)
+        }
+    }
+    
     func fetchPeople () {
         // fetch data from Core Data
         do {
