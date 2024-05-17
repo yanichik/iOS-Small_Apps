@@ -16,3 +16,9 @@ Tableview of Person types displays list of names
    - Apple Documentation: https://developer.apple.com/documentation/foundation/nspredicate
    - Apple Detailed Guide: https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Predicates/AdditionalChapters/Introduction.html
 
+### Speed Test
+**Description**: 
+Performs internet speed test utilizing a custom circular progress bar and `SpeedcheckerSDK 2.0.3`
+
+**Additional**:
+1. SpeedcheckerSDK API Documentation: https://github.com/speedchecker/speedchecker-sdk-ios/wiki/API-documentation
