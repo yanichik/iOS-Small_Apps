@@ -34,5 +34,5 @@ MyPlayground.playground
 Transitions4Devs/AppStore
 
 # Ignore mp4 files
-*.mp4
+# *.mp4
 
