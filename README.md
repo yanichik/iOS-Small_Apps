@@ -22,3 +22,4 @@ Performs internet speed test utilizing a custom circular progress bar and `Speed
 
 **Additional**:
 1. SpeedcheckerSDK API Documentation: https://github.com/speedchecker/speedchecker-sdk-ios/wiki/API-documentation
+2. Customized Circular Progress View: to display upload and download progress during speed test
